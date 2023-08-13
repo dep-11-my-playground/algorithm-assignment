@@ -12,12 +12,12 @@ public class Algo3 {
             }  
         }
         nums = newNums; 
-        String output = ""; 
+        String output = "["; 
         
         for (int i = 0; i < nums.length; i++) {
             output += nums[i] + ", ";
         }
 
-        System.out.println(output + "\b\b ");
+        System.out.println(output + "\b\b" + "]");
     }
 }
