@@ -15,29 +15,29 @@ public class Algo_7 {
         }while(input.isBlank());
 
         String[] words = input.split(" ");
-        int maxLength = words[0].toCharArray().length;;
-        int minLength = words[0].toCharArray().length;
+        int maxLength = words[0].length();
+        int minLength = words[0].length();
         String longestWord = "";
         String smallestWord = "";
 
 
         for (int i = 0; i < words.length; i++) {
-            char[] charsInAWord = words[i].toCharArray(); 
+            String word = words[i]; 
 
-            if (maxLength < charsInAWord.length){
-                maxLength = charsInAWord.length;
-                longestWord = words[i];
+            if (maxLength < word.length()){
+                maxLength = word.length();
+                longestWord = words[i] + ",";
 
-            } else if (maxLength == charsInAWord.length){
-                longestWord =words[i] + ", " + longestWord;
+            } else if (maxLength == word.length()){
+                longestWord =words[i] + "," + longestWord;
             }
             
-            if (minLength > charsInAWord.length){
-                minLength = charsInAWord.length;
-                smallestWord = words[i];
+            if (minLength > word.length()){
+                minLength = word.length();
+                smallestWord = words[i] + ",";
 
-            } else if(minLength == charsInAWord.length){
-                smallestWord = words[i] + ", " + smallestWord;
+            } else if(minLength == word.length()){
+                smallestWord = words[i] + "," + smallestWord;
 
             }
         }
@@ -45,8 +45,8 @@ public class Algo_7 {
 
         System.out.println("longest word's length: " + maxLength);
         System.out.println("Smallest word's length: " + minLength);
-        System.out.println("Longest word/words: "  +longestWord);  
-        System.out.println("Smallest word/words: " + smallestWord);      
+        System.out.println("Longest word/words: "  +longestWord + "\b ");  
+        System.out.println("Smallest word/words: " + smallestWord + "\b ");      
 
     }
 }
